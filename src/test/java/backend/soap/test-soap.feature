@@ -7,6 +7,7 @@ Feature: Test SOAP
     Then request body = read('request/body.xml')
     Then method post
     Then status 200
+    And match response/Envelope/Body/NumberToWordsResponse/NumberToWordsResult == '#string'
     # для динамически изменяемых значений, в результатах ответа, можно использовать рег. выражение
     * def bodyResponseRequest = read('response/success.xml')
     * xml resultBody = response
