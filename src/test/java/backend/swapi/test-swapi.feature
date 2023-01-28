@@ -1,4 +1,5 @@
-@swapi
+@swapi @integration
+@release
 Feature: test1
   Background:
     * url 'https://swapi.dev/api/people'

@@ -1,4 +1,4 @@
-@reqres
+@reqres @integration
 Feature: test2
 
   Background:
@@ -63,3 +63,24 @@ Feature: test2
   }
   """
   And checkAvatarId(response.data)
+
+  Scenario: EndsWith example1
+    # самый простой способ проверки того, что все email оканчиваются на reqres.in
+    When method get
+    Then status 200
+    * def emails = $response.data[*].email
+    Then match each emails contains 'reqres.in'
+
+  Scenario: EndsWith example2
+    When method get
+    Then status 200
+    * def emails = $response.data[*].email
+    * def checkEmails = function(email) { return email.endsWith('reqrep.in') }
+    * def result = karate.map(emails, checkEmails)
+
+  Scenario: EndsWith example3
+    When method get
+    Then status 200
+    * def emails = $response.data[*].email
+    # тест падает, если email не оканчивается на reqres.in
+    * eval emails.forEach(function(email){ if(!email.endsWith('reqres.in')) karate.fail(email + ' is not ending with reqres.in')})

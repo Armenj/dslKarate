@@ -1,4 +1,4 @@
-@soapRequest
+@soapRequest @integration
 Feature: Test SOAP
 
   Scenario: Test soap interface
