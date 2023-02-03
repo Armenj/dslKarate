@@ -38,4 +38,21 @@ public class DbUtils {
     public List<Map<String, Object>> readRows(String query) {
         return jdbc.queryForList(query);
     }
+
+    public Object deleteRows(String query) {
+        try {
+            return jdbc.update(query);
+        } catch (Exception ex) {
+            logger.info("SQL EXCEPTION: ", ex);
+            return null;
+        }
+    }
+
+    public Object addRow(String query) {
+        return jdbc.update(query);
+    }
+
+    public Object updateRow(String query) {
+        return jdbc.update(query);
+    }
 }

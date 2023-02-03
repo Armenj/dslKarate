@@ -5,12 +5,12 @@ Feature: test2
     * url 'https://reqres.in/api/users?page=2'
 
   Scenario: First example includes
-    * def data = [{id: 8, avatar: 'avatar1.jpg'}, {id: 2, avatar: 'avatar2.jpg'}, {id: 3, avatar: 'avatar3.jpg'}]
-    * eval data.forEach(function(d){ if(!d.avatar.includes('' + d.id)) karate.log('avatar should contain id')})
+    * def data = [{id: 1, avatar: 'avatar1.jpg'}, {id: 2, avatar: 'avatar2.jpg'}, {id: 3, avatar: 'avatar3.jpg'}]
+    * eval data.forEach(function(d){ if(!d.avatar.includes('' + d.id)) karate.fail('ERROR: avatar should contain id')})
 
   Scenario: First example contains
     * def data = [{id: 1, avatar: 'avatar1.jpg'}, {id: 2, avatar: 'avatar2.jpg'}, {id: 3, avatar: 'avatar3.jpg'}]
-    * eval data.forEach(function(d){if(d.avatar.contains('' + d.id)) karate.log('Pass'); else karate.log('Fail')})
+    * eval data.forEach(function(d){if(d.avatar.contains('' + d.id)) karate.log('Pass'); else karate.fail('Fail')})
 
   Scenario: Second example
     When method get
