@@ -1,0 +1,14 @@
+postgresProperties:
+  agent-b2b:
+    username:
+      value: django
+      envName: POSTGRES_AGENT_B2B_USERNAME
+    password:
+      value: ahLa4eeshaeP
+      envName: POSTGRES_AGENT_B2B_PASSWORD
+    driverName:
+      value: org.postgresql.Driver
+      envName: POSTGRES_AGENT_B2B_DRIVER_NAME
+    url:
+      value: jdbc:postgresql://95.163.234.188:5432/demo
+      envName: POSTGRES_AGENT_B2B_URL

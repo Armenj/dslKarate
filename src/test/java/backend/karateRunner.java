@@ -8,12 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class karateRunner {
 
-    @Karate.Test
-    Karate testTags(){
-        return Karate.run("classpath:backend").tags("@reqres", "@integration");
-    }
-
-    // альтернативный запуск тестов по тегам с использованием многопоточности
+    // Запуск тестов по тегам с использованием многопоточности
     @Test
     void testExample() {
         Results results = Runner.path("classpath:backend")

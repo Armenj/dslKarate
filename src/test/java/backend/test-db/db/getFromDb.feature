@@ -2,9 +2,7 @@
 Feature: Проверка доступа к БД
 
   Background:
-    * def config = { username: 'django', password: 'ahLa4eeshaeP', url: 'jdbc:postgresql://95.163.234.188:5432/demo', driverClassName: 'org.postgresql.Driver' }
-    * def DbUtils = Java.type('utils.DbUtils')
-    * def db = new DbUtils(config)
+    * def db = Java.type('utils.DbUtils').getInstance('agent-b2b')
 
   @aircrafts-data=single-row
   Scenario: Получение одной строки из таблицы
