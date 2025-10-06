@@ -1,0 +1,6 @@
+{
+	"name": "#present",
+	"job": "#string",
+	"id": "#string",
+	"createdAt": "#regex ^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d+Z$"
+}
