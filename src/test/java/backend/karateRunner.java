@@ -15,7 +15,7 @@ public class karateRunner {
         Results results = Runner.path("classpath:backend")
                 .hook(new AllureKarate())
                 .tags("@integration")
-                .parallel(4);
+                .parallel(1);
 //        assertEquals(0, results.getFailCount(), results.getErrorMessages());
     }
 }
