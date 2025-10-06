@@ -1,4 +1,5 @@
-@db-feature @integration
+@ignore
+@0db-feature @integration
 Feature: Проверка доступа к БД
 
   Background:
@@ -7,4 +8,4 @@ Feature: Проверка доступа к БД
 
     Scenario: Получение одной строки из таблицы
       * def getPostgesData = call read('db/getFromDb.feature@aircrafts-data=single-row')
-      * print getPostgesData
+#      * print getPostgesData

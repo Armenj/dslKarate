@@ -8,3 +8,4 @@ Feature: test1
     When method get
     Then status 200
     Then match response == read('response/success.json')
+
